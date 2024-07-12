@@ -4,6 +4,7 @@ import flightPage from '../pageobjects/flight.page.js';
 describe('Search for flights', () => {
     it('should booking flight success', async () => {
         await HomePage.open();
+        await browser.maximizeWindow();
         await HomePage.selectFlightFromTo("HAN", "SGN");
         await HomePage.selectFlightDate();
         await HomePage.selecPassengers(1, 1);
