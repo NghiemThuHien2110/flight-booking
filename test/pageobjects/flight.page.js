@@ -12,12 +12,7 @@ class FligtPage extends Page {
 
     async waitForFlightsLoad () {
         await this.contentFlight.waitForDisplayed(5000);
-
         await this.loadFlight.waitForDisplayed(5000);
-        // await this.loadFlight.waitUntil(async function () {
-        //     return (await this.loadFlight).isExisting() === true;
-        // });
-
     }
 }
 

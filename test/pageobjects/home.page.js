@@ -19,6 +19,7 @@ class HomePage extends Page {
     }
 
     async optLocatorFlight (locator) {
+        await $('//strong[text()= "' + locator + '"]').waitForClickable(5000);
         await $('//strong[text()= "' + locator + '"]').click();
     }
     
@@ -77,6 +78,7 @@ class HomePage extends Page {
             await this.selectAdultPassengers.click();
         }
         for(let i = 0; i < (child - parseInt(countChild)); i++) {
+            await this.selectChildPassengers.waitForClickable(5000);
             await this.selectChildPassengers.click();
         }
         countAdult = await this.inputPassengersPopup('adults');
